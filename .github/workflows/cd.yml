@@ -17,19 +17,22 @@ jobs:
         with:
           go-version: "1.23.0"
 
+      - name: Clean up existing files
+        run: rm -rf ../../../go/pkg/mod/golang.org/x/telemetry/config@v0.47.0/*
+
       - name: Build
         run: ./scripts/buildprod.sh
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+          credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
 
       - name: Set up gcloud CLI
         uses: google-github-actions/setup-gcloud@v2
         with:
           project_id: notely-459117
-          version: '>= 416.0.0'
+          version: ">= 416.0.0"
 
       - name: Submit image to Artifact Registry via Cloud Build
         run: |
