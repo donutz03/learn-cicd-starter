@@ -18,7 +18,7 @@ jobs:
           go-version: "1.23.0"
 
       - name: Clean up existing files
-        run: rm -rf ../../../go/pkg/mod/golang.org/x/telemetry/config@v0.47.0/*
+        run: sudo rm -rf ../../../go/pkg/mod/golang.org/x/telemetry/config@v0.47.0/*
 
       - name: Build
         run: ./scripts/buildprod.sh
