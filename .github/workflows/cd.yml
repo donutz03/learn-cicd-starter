@@ -34,4 +34,4 @@ jobs:
 
       - name: Build and push Docker image to Artifact Registry
         run: |
-          gcloud builds submit --tag us-central1-docker.pkg.dev/notely-459117/notely-ar-repo/notely:latest --service-account=cloud-run-deployer@notely-459117.iam.gserviceaccount.com --logging=CLOUD_LOGGING_ONLY
+          gcloud builds submit --tag us-central1-docker.pkg.dev/notely-459117/notely-ar-repo/notely:latest --service-account=cloud-run-deployer@notely-459117.iam.gserviceaccount.com --gcs-log-dir=gs://notely-459117_cloudbuild/logs
